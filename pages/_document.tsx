@@ -9,6 +9,8 @@ const Document: NextPage = () => {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
+        <meta name="description" content="Toy Box" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
         <Main />
