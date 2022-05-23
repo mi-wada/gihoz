@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import TimeDisplay from '../components/timeDisplay';
-import Millisecond from '../models/millisecond';
+import Milliseconds from '../models/milliseconds';
 import styles from '../styles/Home.module.css'
 
 const StopWatch: NextPage = () => {
-  const [ms, setMS] = useState(new Millisecond());
+  const [ms, setMS] = useState(new Milliseconds());
   const [laps, setLaps] = useState<Array<string>>([]);
   const [timerInterval, setTimerInterval] = useState<NodeJS.Timer | undefined>(undefined);
   const [timerRunning, setTimerRunning] = useState(false);
@@ -47,7 +47,7 @@ const StopWatch: NextPage = () => {
   const resetTimer = () => {
     stopTimer();
 
-    setMS(new Millisecond());
+    setMS(new Milliseconds());
     clearTimerInterval();
     setLaps([]);
   };

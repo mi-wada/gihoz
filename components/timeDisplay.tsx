@@ -1,6 +1,10 @@
-import Millisecond from "../models/millisecond";
+import Milliseconds from "../models/milliseconds";
 
-const TimeDisplay: React.FunctionComponent<{ time: Millisecond }> = ({ time }) => {
+type TimeDisplayProps = {
+  time: Milliseconds
+};
+
+const TimeDisplay: React.FunctionComponent<TimeDisplayProps> = ({ time }) => {
   return (
     <>
       {time.formatted()}

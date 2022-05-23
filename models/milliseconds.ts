@@ -1,4 +1,4 @@
-export default class Millisecond {
+export default class Milliseconds {
   value: number;
 
   constructor(ms: number = 0) {
@@ -6,7 +6,7 @@ export default class Millisecond {
   }
 
   add(ms: number) {
-    return new Millisecond(this.value + ms);
+    return new Milliseconds(this.value + ms);
   }
 
   // return HH:MM:SS.fff
