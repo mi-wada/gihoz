@@ -4,9 +4,9 @@ import Toy from '../components/toy'
 
 const Home: NextPage = () => {
   return (
-    <Container sx={{m: 2}}>
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
+    <Container sx={{ m: 6 }}>
+      <Grid container spacing={1}>
+        <Grid item xs={3}>
           <Toy title='Stopwatch' description='simple stopwatch' href='/stopwatch' />
         </Grid>
       </Grid>

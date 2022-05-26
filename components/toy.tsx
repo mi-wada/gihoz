@@ -3,12 +3,12 @@ import Link from "next/link";
 import { COLORS } from "../constants";
 
 type ToyProps = {
-  href: string,
-  title: string,
-  description: string,
+  readonly href: string,
+  readonly title: string,
+  readonly description: string,
 }
 
-const Toy = ({ title, description, href }: ToyProps) => {
+const Toy = ({ title, href }: ToyProps) => {
   return (
     <Link href={href}>
       <Card sx={{ backgroundColor: COLORS.main, width: '180px', height: '180px' }}>

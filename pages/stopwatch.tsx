@@ -1,8 +1,9 @@
+import { AccessAlarm } from '@mui/icons-material';
+import { Button, Container, Grid, List, ListItem, Typography } from '@mui/material';
 import type { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import TimeDisplay from '../components/timeDisplay';
 import Milliseconds from '../models/milliseconds';
-import styles from '../styles/Home.module.css'
 
 const StopWatch: NextPage = () => {
   const [ms, setMS] = useState(new Milliseconds());
@@ -22,9 +23,7 @@ const StopWatch: NextPage = () => {
     const INTERVAL_MS = 10;
     if (timerRunning) {
       const interval = setInterval(() => {
-        setMS((ms) => {
-          return ms.add(INTERVAL_MS);
-        });
+        setMS(ms => ms.add(INTERVAL_MS));
       }, INTERVAL_MS);
       setTimerInterval(interval);
     } else {
@@ -57,55 +56,44 @@ const StopWatch: NextPage = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <TimeDisplay time={ms} />
-      <div className={styles.buttons}>
-        <StartButton startTimer={startTimer} enabled={startButtonEnabled} />
-        <StopButton stopTimer={stopTimer} enabled={stopButtonEnabled} />
-        <ResetButton resetTimer={resetTimer} />
-        <RecordLapButton recordLap={recordLap} enabled={recordLapButtonEnabled} />
-      </div>
-      <ul className={styles.laps}>
-        {
-          laps.map(lap =>
-            <li key={lap}>{lap}</li>
-          )
-        }
-      </ul>
-    </div>
+    <Container sx={{mt: 20, mb: 20}}>
+      <Grid container direction='column' alignContent='center'>
+        <TimeDisplay ms={ms} />
+        <Grid item>
+          <Grid container justifyContent='space-between'>
+            <Button onClick={startTimer} disabled={ !startButtonEnabled }>
+              start
+            </Button>
+            <Button onClick={stopTimer} disabled={ !stopButtonEnabled } color='error'>
+              stop
+            </Button>
+            <Button onClick={resetTimer} color='inherit'>
+              reset
+            </Button>
+            <Button onClick={recordLap} disabled={ !recordLapButtonEnabled } color='inherit'>
+              lap
+            </Button>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <List>
+            {
+              laps.map(lap =>
+                <ListItem key={lap}>
+                  <Grid container alignItems='center'>
+                    <AccessAlarm sx={{fontSize: 24, mr: 1}} />
+                    <Typography variant='h6'>
+                      {lap}
+                    </Typography>
+                  </Grid>
+                </ListItem>
+              )
+            }
+          </List>
+        </Grid>
+      </Grid>
+    </Container>
   )
 }
 
 export default StopWatch;
-
-const StartButton: React.FunctionComponent<{ startTimer: () => void, enabled: boolean }> = ({ startTimer, enabled }) => {
-  return (
-    <button onClick={startTimer} disabled={!enabled}>
-      start
-    </button>
-  )
-}
-
-const StopButton: React.FunctionComponent<{ stopTimer: () => void, enabled: boolean }> = ({ stopTimer, enabled }) => {
-  return (
-    <button onClick={stopTimer} disabled={!enabled}>
-      stop
-    </button>
-  )
-}
-
-const ResetButton: React.FunctionComponent<{ resetTimer: () => void }> = ({ resetTimer }) => {
-  return (
-    <button onClick={resetTimer}>
-      reset
-    </button>
-  )
-}
-
-const RecordLapButton: React.FunctionComponent<{ recordLap: () => void, enabled: boolean }> = ({ recordLap, enabled }) => {
-  return (
-    <button onClick={recordLap} disabled={!enabled}>
-      lap
-    </button>
-  )
-}

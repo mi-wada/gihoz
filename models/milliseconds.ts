@@ -5,7 +5,7 @@ export default class Milliseconds {
     this.value = ms;
   }
 
-  add(ms: number) {
+  add(ms: number): Milliseconds {
     return new Milliseconds(this.value + ms);
   }
 
