@@ -9,6 +9,9 @@ const Home: NextPage = () => {
         <Grid item xs={3}>
           <Toy title='Stopwatch' description='simple stopwatch' href='/stopwatch' />
         </Grid>
+        <Grid item xs={3}>
+          <Toy title='Counter' description='simple counter' href='/counter' />
+        </Grid>
       </Grid>
     </Container>
   )
