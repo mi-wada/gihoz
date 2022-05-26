@@ -1,30 +1,16 @@
+import { Container, Grid, Typography } from '@mui/material'
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import Toy from '../components/toy'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Toy Box</title>
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <span>Toy Box</span>
-        </h1>
-
-        <div className={styles.grid}>
-          <Link href="/stopwatch">
-            <a className={styles.card}>
-              <h2>Stopwatch &rarr;</h2>
-              <p>simple stopwatch</p>
-            </a>
-          </Link>
-        </div>
-      </main>
-    </div>
+    <Container sx={{m: 2}}>
+      <Grid container spacing={2}>
+        <Grid item xs={4}>
+          <Toy title='Stopwatch' description='simple stopwatch' href='/stopwatch' />
+        </Grid>
+      </Grid>
+    </Container>
   )
 }
 

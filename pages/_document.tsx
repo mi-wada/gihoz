@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { Head, Html, Main, NextScript } from "next/document";
+import { COLORS } from "../constants";
 
 const Document: NextPage = () => {
   return (
@@ -12,7 +13,7 @@ const Document: NextPage = () => {
         <meta name="description" content="Toy Box" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
+      <body style={{backgroundColor: COLORS.bg}}>
         <Main />
         <NextScript />
       </body>
