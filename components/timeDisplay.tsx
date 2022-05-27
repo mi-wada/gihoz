@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import Milliseconds from "../models/milliseconds";
+import Milliseconds from "../utils/milliseconds";
 
 type TimeDisplayProps = {
   ms: Milliseconds

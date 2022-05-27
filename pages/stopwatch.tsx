@@ -3,7 +3,7 @@ import { Button, Container, Grid, List, ListItem, Typography } from '@mui/materi
 import type { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import TimeDisplay from '../components/timeDisplay';
-import Milliseconds from '../models/milliseconds';
+import Milliseconds from '../utils/milliseconds';
 
 const StopWatch: NextPage = () => {
   const [ms, setMS] = useState(new Milliseconds());

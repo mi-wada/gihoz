@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import React, { useCallback, useState } from 'react'
 
 const Counter: NextPage = () => {
-  const [count, setCount] = useState(100);
+  const [count, setCount] = useState(0);
 
   const increment = useCallback(() => {
     // もしも以下のようにしてインクリメントする場合、ボタンを何度押してもcountの値は1にしかならない。

@@ -1,8 +1,8 @@
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import Head from "next/head";
 import { ReactElement } from "react";
 import Footer from "./footer";
-import Navbar from "./navbar";
+import Header from "./header";
 
 type LayoutProps = {
   children: ReactElement
@@ -14,7 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Head>
         <title>Toy Box</title>
       </Head>
-      <Navbar />
+      <Header />
       <Container>
         <main>{children}</main>
       </Container>
