@@ -12,6 +12,9 @@ const Home: NextPage = () => {
         <Grid item xs={3}>
           <Toy title='Counter' description='simple counter' href='/counter' />
         </Grid>
+        <Grid item xs={3}>
+          <Toy title='Form' description='form with validation' href='/form' />
+        </Grid>
       </Grid>
     </Container>
   )
