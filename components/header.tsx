@@ -1,6 +1,6 @@
-import { Box, Typography } from "@mui/material";
-import Link from "next/link";
-import { COLORS } from "../constants";
+import { Box, Typography } from '@mui/material'
+import Link from 'next/link'
+import { COLORS } from '../constants'
 
 const Header = () => {
   return (
@@ -14,6 +14,6 @@ const Header = () => {
       </Link>
     </Box>
   )
-};
+}
 
-export default Header;
+export default Header

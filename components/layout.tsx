@@ -1,8 +1,8 @@
-import { Container } from "@mui/material";
-import Head from "next/head";
-import { ReactElement } from "react";
-import Footer from "./footer";
-import Header from "./header";
+import { Container } from '@mui/material'
+import Head from 'next/head'
+import { ReactElement } from 'react'
+import Footer from './footer'
+import Header from './header'
 
 type LayoutProps = {
   children: ReactElement
@@ -23,4 +23,4 @@ const Layout = ({ children }: LayoutProps) => {
   )
 }
 
-export default Layout;
+export default Layout
