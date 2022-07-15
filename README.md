@@ -6,3 +6,9 @@ npm run dev
 ```
 
 Server listen `3000` port.
+
+## Run test
+
+```bash
+npm run  test
+```

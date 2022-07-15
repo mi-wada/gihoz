@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import type { NextPage } from 'next'
 import Toy from '../components/toy'
 
